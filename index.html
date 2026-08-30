@@ -138,18 +138,25 @@
     .input-group {
       display: flex;
       width: 100%;
-      max-width: 520px;
+      max-width: 480px;
       gap: 0;
       background: var(--gray-950);
-      border: 1px solid var(--gray-700);
+      border: 1px solid rgba(255,255,255,0.18);
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: border-color var(--transition), box-shadow var(--transition);
       opacity: 0;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 0 24px rgba(255,255,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .input-group:focus-within {
-      border-color: var(--gray-400);
-      box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.15),
+        0 0 32px rgba(255,255,255,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.1);
     }
     .url-input {
       flex: 1;
@@ -209,12 +216,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 1.25rem;
-      border-bottom: 1px solid var(--gray-800);
+      padding: 0.5rem 0.875rem;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
       background: var(--gray-950);
       flex-shrink: 0;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 24px rgba(0,0,0,0.4);
     }
     .workspace-brand {
       display: flex;
@@ -222,12 +230,13 @@
       gap: 0.625rem;
     }
     .workspace-brand .logo-mark {
-      width: 32px;
-      height: 32px;
-      font-size: 1rem;
+      width: 28px;
+      height: 28px;
+      font-size: 0.875rem;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.25), 0 0 14px rgba(255,255,255,0.2);
     }
     .workspace-brand .logo-text {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
     .workspace-actions {
       display: flex;
@@ -239,32 +248,36 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      font-size: 0.8125rem;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      border-radius: var(--radius);
+      border-radius: 6px;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: background var(--transition), border-color var(--transition), color var(--transition);
-      min-height: 40px;
+      transition: background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+      min-height: 34px;
     }
     .btn-primary {
       background: #fff;
       color: #000;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.2), 0 0 12px rgba(255,255,255,0.15);
     }
     .btn-primary:hover:not(:disabled) {
-      background: var(--gray-200);
+      background: var(--gray-100);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.35), 0 0 18px rgba(255,255,255,0.25);
     }
     .btn-ghost {
       background: transparent;
       color: var(--gray-300);
-      border-color: var(--gray-700);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .btn-ghost:hover:not(:disabled) {
       background: var(--gray-900);
-      border-color: var(--gray-500);
+      border-color: rgba(255,255,255,0.35);
       color: #fff;
+      box-shadow: 0 0 12px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1);
     }
     .btn:disabled {
       opacity: 0.45;
@@ -292,28 +305,29 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
-      border-right: 1px solid var(--gray-800);
+      border-right: 1px solid rgba(255,255,255,0.1);
       background: #000;
+      box-shadow: inset -1px 0 0 rgba(255,255,255,0.04);
     }
     .tabs {
       display: flex;
       gap: 0;
-      padding: 0 0.75rem;
-      border-bottom: 1px solid var(--gray-800);
+      padding: 0 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       background: var(--gray-950);
       flex-shrink: 0;
     }
     .tab {
-      padding: 0.75rem 1.25rem;
-      font-size: 0.8125rem;
+      padding: 0.5rem 0.875rem;
+      font-size: 0.75rem;
       font-weight: 500;
       color: var(--gray-500);
       background: transparent;
       border: none;
       border-bottom: 2px solid transparent;
       cursor: pointer;
-      transition: color var(--transition), border-color var(--transition);
-      min-height: 44px;
+      transition: color var(--transition), border-color var(--transition), text-shadow var(--transition);
+      min-height: 36px;
     }
     .tab:hover {
       color: var(--gray-300);
@@ -321,20 +335,22 @@
     .tab.active {
       color: #fff;
       border-bottom-color: #fff;
+      text-shadow: 0 0 12px rgba(255,255,255,0.45);
     }
     .editor-wrap {
       flex: 1;
       overflow: auto;
       position: relative;
-      background: #0A0A0A;
+      background: #050505;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
     }
     .code-editor {
       display: none;
       margin: 0;
-      padding: 1.25rem 1.5rem;
+      padding: 0.875rem 1rem;
       font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
-      font-size: 0.8125rem;
-      line-height: 1.65;
+      font-size: 0.75rem;
+      line-height: 1.55;
       color: var(--gray-300);
       white-space: pre-wrap;
       word-break: break-word;
@@ -346,15 +362,15 @@
     }
 
     /* Syntax highlighting (custom, B&W) */
-    .tok-tag { color: #E5E5E5; }
+    .tok-tag { color: #F5F5F5; }
     .tok-attr { color: #A3A3A3; }
     .tok-string { color: #D4D4D4; }
     .tok-comment { color: #525252; font-style: italic; }
     .tok-keyword { color: #FAFAFA; font-weight: 600; }
-    .tok-prop { color: #D4D4D4; }
+    .tok-prop { color: #E5E5E5; }
     .tok-value { color: #A3A3A3; }
     .tok-punct { color: #737373; }
-    .tok-fn { color: #E5E5E5; }
+    .tok-fn { color: #F5F5F5; }
     .tok-num { color: #A3A3A3; }
 
     /* Preview panel */
@@ -364,29 +380,35 @@
       flex-direction: column;
       min-width: 0;
       background: #000;
+      box-shadow: inset 1px 0 0 rgba(255,255,255,0.04);
     }
     .preview-toolbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 1rem;
-      border-bottom: 1px solid var(--gray-800);
+      padding: 0.375rem 0.875rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       background: var(--gray-950);
       flex-shrink: 0;
-      min-height: 44px;
+      min-height: 36px;
     }
     .preview-label {
-      font-size: 0.75rem;
-      font-weight: 500;
+      font-size: 0.6875rem;
+      font-weight: 600;
       color: var(--gray-500);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .preview-frame-wrap {
       flex: 1;
       position: relative;
-      background: #111;
+      background: #0a0a0a;
       overflow: hidden;
+      /* Soft white 3D glow frame */
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.12),
+        inset 0 0 24px rgba(255,255,255,0.03),
+        0 0 32px rgba(255,255,255,0.04);
     }
     .preview-frame {
       width: 100%;
@@ -463,11 +485,12 @@
       }
       .code-panel {
         border-right: none;
-        border-bottom: 1px solid var(--gray-800);
-        max-height: 50%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        max-height: 48%;
+        box-shadow: none;
       }
       .preview-panel {
-        max-height: 50%;
+        max-height: 52%;
       }
       .url-badge {
         display: none;
@@ -724,6 +747,7 @@
     }
 
     // ---------- Lightweight syntax highlighters (B&W) ----------
+    // Use private placeholders so injected spans are never re-matched
     function escapeHtml(str) {
       return str
         .replace(/&/g, '&amp;')
@@ -734,37 +758,58 @@
 
     function highlightHtml(code) {
       let s = escapeHtml(code);
-      // Comments
-      s = s.replace(/(&lt;!--[\s\S]*?--&gt;)/g, '<span class="tok-comment">$1</span>');
-      // Tags
-      s = s.replace(/(&lt;\/?)([\w-]+)/g, '$1<span class="tok-tag">$2</span>');
-      // Attributes
-      s = s.replace(/([\w-]+)(=)/g, '<span class="tok-attr">$1</span><span class="tok-punct">$2</span>');
-      // Strings
-      s = s.replace(/(&quot;[^&]*?&quot;)/g, '<span class="tok-string">$1</span>');
+      // Comments first
+      s = s.replace(/(&lt;!--[\s\S]*?--&gt;)/g, '§C§$1§/C§');
+      // Full tags: capture open/close, name, rest of attrs, close bracket
+      s = s.replace(/(&lt;\/?)([\w-]+)([^&]*?)(\/?&gt;)/g, function (_, open, name, rest, close) {
+        // Highlight attributes inside rest without touching our markers
+        rest = rest.replace(/([\w:-]+)(=)(&quot;[^&]*?&quot;)/g,
+          '§A§$1§/A§§P§$2§/P§§S§$3§/S§');
+        rest = rest.replace(/([\w:-]+)(=)/g, '§A§$1§/A§§P§$2§/P§');
+        return open + '§T§' + name + '§/T§' + rest + close;
+      });
+      // Restore markers to spans
+      s = s
+        .replace(/§C§/g, '<span class="tok-comment">').replace(/§\/C§/g, '</span>')
+        .replace(/§T§/g, '<span class="tok-tag">').replace(/§\/T§/g, '</span>')
+        .replace(/§A§/g, '<span class="tok-attr">').replace(/§\/A§/g, '</span>')
+        .replace(/§P§/g, '<span class="tok-punct">').replace(/§\/P§/g, '</span>')
+        .replace(/§S§/g, '<span class="tok-string">').replace(/§\/S§/g, '</span>');
       return s;
     }
 
     function highlightCss(code) {
       let s = escapeHtml(code);
-      s = s.replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="tok-comment">$1</span>');
-      s = s.replace(/([.#]?[\w-]+)(\s*\{)/g, '<span class="tok-prop">$1</span>$2');
-      s = s.replace(/([\w-]+)(\s*:)/g, '<span class="tok-attr">$1</span><span class="tok-punct">$2</span>');
-      s = s.replace(/(:\s*)([^;{}\n]+)/g, '$1<span class="tok-value">$2</span>');
+      s = s.replace(/(\/\*[\s\S]*?\*\/)/g, '§C§$1§/C§');
+      s = s.replace(/([.#]?[\w-]+)(\s*\{)/g, '§R§$1§/R§$2');
+      s = s.replace(/([\w-]+)(\s*:)/g, '§A§$1§/A§§P§$2§/P§');
+      s = s.replace(/(:\s*)([^;{}\n]+)/g, '$1§V§$2§/V§');
+      s = s
+        .replace(/§C§/g, '<span class="tok-comment">').replace(/§\/C§/g, '</span>')
+        .replace(/§R§/g, '<span class="tok-prop">').replace(/§\/R§/g, '</span>')
+        .replace(/§A§/g, '<span class="tok-attr">').replace(/§\/A§/g, '</span>')
+        .replace(/§P§/g, '<span class="tok-punct">').replace(/§\/P§/g, '</span>')
+        .replace(/§V§/g, '<span class="tok-value">').replace(/§\/V§/g, '</span>');
       return s;
     }
 
     function highlightJs(code) {
       let s = escapeHtml(code);
-      s = s.replace(/(\/\/[^\n]*)/g, '<span class="tok-comment">$1</span>');
-      s = s.replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="tok-comment">$1</span>');
+      s = s.replace(/(\/\/[^\n]*)/g, '§C§$1§/C§');
+      s = s.replace(/(\/\*[\s\S]*?\*\/)/g, '§C§$1§/C§');
+      s = s.replace(/(&quot;[^&]*?&quot;|'[^']*?')/g, '§S§$1§/S§');
       const keywords = ['const','let','var','function','return','if','else','for','while','new','this','class','import','export','from','async','await','try','catch','throw','typeof','instanceof','true','false','null','undefined'];
       keywords.forEach(kw => {
-        s = s.replace(new RegExp('\\b(' + kw + ')\\b', 'g'), '<span class="tok-keyword">$1</span>');
+        s = s.replace(new RegExp('\\b(' + kw + ')\\b', 'g'), '§K§$1§/K§');
       });
-      s = s.replace(/(&quot;[^&]*?&quot;|'[^']*?')/g, '<span class="tok-string">$1</span>');
-      s = s.replace(/\b(\d+\.?\d*)\b/g, '<span class="tok-num">$1</span>');
-      s = s.replace(/\b([a-zA-Z_]\w*)\s*\(/g, '<span class="tok-fn">$1</span>(');
+      s = s.replace(/\b(\d+\.?\d*)\b/g, '§N§$1§/N§');
+      s = s.replace(/\b([a-zA-Z_]\w*)\s*\(/g, '§F§$1§/F§(');
+      s = s
+        .replace(/§C§/g, '<span class="tok-comment">').replace(/§\/C§/g, '</span>')
+        .replace(/§S§/g, '<span class="tok-string">').replace(/§\/S§/g, '</span>')
+        .replace(/§K§/g, '<span class="tok-keyword">').replace(/§\/K§/g, '</span>')
+        .replace(/§N§/g, '<span class="tok-num">').replace(/§\/N§/g, '</span>')
+        .replace(/§F§/g, '<span class="tok-fn">').replace(/§\/F§/g, '</span>');
       return s;
     }
 
