@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Syntax tokens */
+.tok-tag { color: #f5f5f5; }
+.tok-attr { color: #a3a3a3; }
+.tok-string { color: #d4d4d4; }
+.tok-comment { color: #525252; font-style: italic; }
+.tok-keyword { color: #fafafa; font-weight: 600; }
+.tok-prop { color: #e5e5e5; }
+.tok-value { color: #a3a3a3; }
+.tok-punct { color: #737373; }
+.tok-fn { color: #f5f5f5; }
+.tok-num { color: #a3a3a3; }
+
+/* Compact 3D glow cards */
+.glow-card {
+  transition: box-shadow 250ms ease, border-color 250ms ease;
+}
+.glow-card:hover {
+  border-color: rgba(200, 210, 255, 0.28) !important;
+  box-shadow:
+    0 0 0 1px rgba(200, 210, 255, 0.14),
+    0 0 28px rgba(160, 180, 255, 0.18),
+    0 0 56px rgba(120, 150, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 28px rgba(255, 255, 255, 0.03) !important;
+}
